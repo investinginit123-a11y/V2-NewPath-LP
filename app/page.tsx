@@ -107,6 +107,6 @@ export default function Page() {
           </div>
         </div>
       </Section>
-    </main>
+    </mai>
   );
 }
