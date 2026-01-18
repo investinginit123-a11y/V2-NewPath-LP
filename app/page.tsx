@@ -1,9 +1,6 @@
-import Section from "./components/Section";
-import LeadForm from "./components/LeadForm";
-import FAQ from "./components/FAQ";
-
-const APPLICATION_URL = "/#get-started"; // TODO: replace with your real application link when ready
-const BALANCE_CIPHER_URL = "https://balancecipher.com"; // TODO: replace with your real app link if different
+import Section from "../components/Section";
+import LeadForm from "../components/LeadForm";
+import FAQ from "../components/FAQ";
 
 export default function Page() {
   return (
@@ -12,11 +9,16 @@ export default function Page() {
         <div className="container">
           <div className="nav">
             <div className="brand">
-              <img
-                src="/brand/newpath-auto-finance.png"
-                alt="New Path Auto Finance"
-                className="brandLogo"
+              <span
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: 999,
+                  background: "var(--accent)",
+                  boxShadow: "0 0 18px rgba(24,214,200,0.55)"
+                }}
               />
+              <span>NewPath</span>
             </div>
             <div className="badge">Simple. Clear. Actionable.</div>
           </div>
@@ -25,9 +27,9 @@ export default function Page() {
             <div className="card">
               <div className="cardInner">
                 <h1 className="h1">
-                  Start your next step <span className="accent">with clarity</span>.
+                  Start your next step{" "}
+                  <span style={{ color: "var(--accent)" }}>with clarity</span>.
                 </h1>
-
                 <p className="sub">
                   If you are tired of guessing, you are in the right place. We’ll take your situation,
                   keep it simple, and point you to one clean next step.
@@ -40,15 +42,13 @@ export default function Page() {
                 </div>
 
                 <div className="buttonRow">
-                  <a className="btn btnPrimary" href={APPLICATION_URL}>
-                    Start my application →
+                  <a className="btn btnPrimary" href="#get-started">
+                    Get started
                   </a>
-                  <a className="btn" href={BALANCE_CIPHER_URL} target="_blank" rel="noreferrer">
-                    Open BALANCE Cipher →
+                  <a className="btn" href="#how-it-works">
+                    How it works
                   </a>
                 </div>
-
-                <div className="microNote">Fast path: start here. We’ll route you based on what you share.</div>
               </div>
             </div>
 
@@ -67,7 +67,7 @@ export default function Page() {
         </div>
       </header>
 
-      {/* OPTION D: SHORT “HOW TO BUY A CAR” BLOCK — BULLETS + HARD CTA */}
+      {/* HOW TO BUY A CAR (SHORT) */}
       <Section
         id="how-to-buy-a-car"
         title="How to buy a car (the right way)"
@@ -75,34 +75,38 @@ export default function Page() {
       >
         <div className="card">
           <div className="cardInner">
-            <div className="bulletGrid">
-              <div className="bulletItem">
-                <div className="bulletTitle">1) Know your numbers</div>
-                <div className="bulletBody">Budget, down payment, and what you can truly carry monthly.</div>
+            <div style={{ display: "grid", gap: 10 }}>
+              <div className="item" style={{ margin: 0 }}>
+                <h3 className="itemTitle" style={{ margin: 0 }}>
+                  1) Know your numbers
+                </h3>
+                <p className="itemBody">Budget, down payment, and what you can actually carry monthly.</p>
               </div>
 
-              <div className="bulletItem">
-                <div className="bulletTitle">2) Get positioned for approval</div>
-                <div className="bulletBody">Identify the blockers early and route your next move correctly.</div>
+              <div className="item" style={{ margin: 0 }}>
+                <h3 className="itemTitle" style={{ margin: 0 }}>
+                  2) Get positioned for approval
+                </h3>
+                <p className="itemBody">We identify the approval blockers and route your next move.</p>
               </div>
 
-              <div className="bulletItem">
-                <div className="bulletTitle">3) Make one clean move next</div>
-                <div className="bulletBody">Not a 30-step checklist. One step you can execute today.</div>
+              <div className="item" style={{ margin: 0 }}>
+                <h3 className="itemTitle" style={{ margin: 0 }}>
+                  3) Make one clean move next
+                </h3>
+                <p className="itemBody">Not a 30-step checklist. One step you can execute today.</p>
               </div>
-            </div>
 
-            <div className="buttonRow" style={{ marginTop: 14 }}>
-              <a className="btn btnPrimary" href={APPLICATION_URL}>
-                Start my application →
-              </a>
-              <a className="btn" href={BALANCE_CIPHER_URL} target="_blank" rel="noreferrer">
-                Open BALANCE Cipher →
-              </a>
-            </div>
+              <div className="buttonRow" style={{ marginTop: 6 }}>
+                <a className="btn btnPrimary" href="#get-started">
+                  Start my application →
+                </a>
+                <a className="btn" href="#get-started">
+                  Open BALANCE Cipher →
+                </a>
+              </div>
 
-            <div className="microNote">
-              If you want the fastest path: submit the basics. We’ll route the next step based on your situation.
+              <div className="muted">Fast path: start here. We’ll route you to the next step based on what you share.</div>
             </div>
           </div>
         </div>
