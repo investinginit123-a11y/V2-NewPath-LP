@@ -22,88 +22,127 @@ export default function Page() {
           max-width: 720px;
         }
 
-        /* Door CTA (bottom) — button-first, form hidden until user opts in */
+        /* Bottom Door CTA — larger + more “door-like” */
         #get-started .doorWrap {
           display: grid;
-          gap: 12px;
+          gap: 14px;
         }
 
         #get-started details.doorDetails {
-          border-radius: 18px;
+          border-radius: 22px;
         }
 
         #get-started details.doorDetails > summary {
           list-style: none;
           cursor: pointer;
           user-select: none;
-          border-radius: 18px;
-          padding: 18px 18px;
+          border-radius: 22px;
+          padding: 22px 22px;
           border: 1px solid rgba(0,0,0,0.10);
-          background: #fff;
-          box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+          background: #ffffff;
+          box-shadow: 0 18px 44px rgba(0,0,0,0.08);
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 12px;
-          font-weight: 700;
+          gap: 16px;
+          font-weight: 800;
         }
-
-        /* hide default marker */
         #get-started details.doorDetails > summary::-webkit-details-marker { display: none; }
 
-        /* “Door” visual */
-        #get-started .doorIcon {
-          width: 18px;
-          height: 26px;
-          border: 2px solid rgba(0,0,0,0.55);
-          border-radius: 4px;
-          position: relative;
+        /* Bigger “door” badge (left) */
+        #get-started .doorBadge {
+          width: 64px;
+          height: 64px;
+          border-radius: 16px;
+          display: grid;
+          place-items: center;
+          background: rgba(0,0,0,0.04);
+          border: 1px solid rgba(0,0,0,0.08);
           flex: 0 0 auto;
+        }
+
+        /* Sophisticated door icon */
+        #get-started .doorIcon {
+          width: 26px;
+          height: 34px;
+          border: 2px solid rgba(0,0,0,0.60);
+          border-radius: 6px;
+          position: relative;
+        }
+        #get-started .doorIcon::before {
+          content: "";
+          position: absolute;
+          left: 6px;
+          top: 6px;
+          right: 6px;
+          bottom: 6px;
+          border-radius: 4px;
+          border: 1px solid rgba(0,0,0,0.18);
         }
         #get-started .doorIcon::after {
           content: "";
-          width: 4px;
-          height: 4px;
+          width: 5px;
+          height: 5px;
           border-radius: 999px;
-          background: rgba(0,0,0,0.55);
+          background: rgba(0,0,0,0.60);
           position: absolute;
-          right: 3px;
+          right: 5px;
           top: 50%;
           transform: translateY(-50%);
         }
 
         #get-started .doorText {
           display: grid;
-          gap: 2px;
+          gap: 4px;
           flex: 1 1 auto;
           min-width: 0;
         }
         #get-started .doorTitle {
-          font-size: 16px;
-          line-height: 1.2;
+          font-size: 18px;
+          line-height: 1.15;
+          letter-spacing: -0.01em;
         }
         #get-started .doorSub {
-          font-size: 12px;
+          font-size: 13px;
           opacity: 0.72;
           font-weight: 500;
+          line-height: 1.35;
         }
 
+        /* Accent action pill (right) */
         #get-started .doorAction {
-          padding: 10px 14px;
-          border-radius: 12px;
+          padding: 12px 16px;
+          border-radius: 14px;
           background: var(--accent);
           color: #fff;
-          font-weight: 700;
+          font-weight: 800;
           white-space: nowrap;
           flex: 0 0 auto;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
         #get-started details.doorDetails[open] > summary {
-          box-shadow: 0 18px 40px rgba(0,0,0,0.09);
+          box-shadow: 0 22px 54px rgba(0,0,0,0.10);
+          border-color: rgba(0,0,0,0.14);
         }
 
         #get-started .doorBody {
-          margin-top: 12px;
+          margin-top: 14px;
+        }
+
+        /* Optional: a subtle “highlight line” to make it feel premium */
+        #get-started details.doorDetails > summary {
+          position: relative;
+          overflow: hidden;
+        }
+        #get-started details.doorDetails > summary::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, rgba(0,0,0,0.00), rgba(0,0,0,0.03), rgba(0,0,0,0.00));
+          transform: translateX(-40%);
+          opacity: 0.9;
+          pointer-events: none;
         }
       `}</style>
 
@@ -221,7 +260,7 @@ export default function Page() {
         <FAQ />
       </Section>
 
-      {/* BOTTOM: CTA-FIRST “DOOR”, FORM HIDDEN UNTIL THEY OPT IN */}
+      {/* BOTTOM: BIG “DOOR” CTA, FORM HIDDEN UNTIL THEY OPT IN */}
       <Section
         id="get-started"
         title="Ready to open your new door?"
@@ -230,12 +269,16 @@ export default function Page() {
         <div className="doorWrap">
           <details className="doorDetails">
             <summary>
-              <span className="doorIcon" aria-hidden="true" />
+              <span className="doorBadge" aria-hidden="true">
+                <span className="doorIcon" />
+              </span>
+
               <span className="doorText">
-                <span className="doorTitle">Step through the door</span>
+                <span className="doorTitle">Open your new door</span>
                 <span className="doorSub">Share only the basics. We’ll follow up with the next step.</span>
               </span>
-              <span className="doorAction">Continue →</span>
+
+              <span className="doorAction">Open →</span>
             </summary>
 
             <div className="doorBody">
