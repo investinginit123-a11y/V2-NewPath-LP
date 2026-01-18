@@ -20,7 +20,7 @@ export default function Page() {
           max-width: 720px;
         }
 
-        /* HERO: AI guided pill — make it feel like a real artifact */
+        /* HERO: AI guided pill — hero artifact */
         .aiGuidedPill {
           display: inline-flex;
           align-items: center;
@@ -39,10 +39,16 @@ export default function Page() {
           text-transform: uppercase;
           opacity: 0.82;
         }
-
-        /* Remove “boxed” look: make emblem larger and un-framed */
+        .aiGuidedAccent {
+          width: 10px;
+          height: 46px;
+          border-radius: 999px;
+          background: var(--accent);
+          opacity: 0.14;
+          flex: 0 0 auto;
+        }
         .aiGuidedEmblem {
-          height: 46px; /* bigger = real presence */
+          height: 46px;
           width: auto;
           display: block;
           object-fit: contain;
@@ -53,17 +59,20 @@ export default function Page() {
           margin: 0 !important;
         }
 
-        /* Subtle accent edge (premium, not loud) */
-        .aiGuidedAccent {
-          width: 10px;
-          height: 46px;
-          border-radius: 999px;
-          background: var(--accent);
-          opacity: 0.14;
-          flex: 0 0 auto;
+        /* Benefits grid (V1-style, clean) */
+        .benefitsLead {
+          max-width: 820px;
+        }
+        .benefitsGrid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 12px;
+        }
+        @media (max-width: 920px) {
+          .benefitsGrid { grid-template-columns: 1fr; }
         }
 
-        /* Bottom Door CTA — keep as you have it (unchanged from your last good state) */
+        /* Bottom Door CTA */
         #get-started .doorWrap { display: grid; gap: 14px; }
         #get-started details.doorDetails { border-radius: 22px; }
         #get-started details.doorDetails > summary {
@@ -167,7 +176,6 @@ export default function Page() {
               />
             </div>
 
-            {/* Bigger, cleaner pill (single) */}
             <div className="aiGuidedPill" aria-label="AI guided by the BALANCE Cipher">
               <span className="aiGuidedText">AI GUIDED BY</span>
               <span className="aiGuidedAccent" aria-hidden="true" />
@@ -214,9 +222,7 @@ export default function Page() {
         <div style={{ display: "grid", gap: 12 }}>
           <div className="card">
             <div className="cardInner">
-              <h3 className="itemTitle" style={{ marginTop: 0 }}>
-                Buy your next vehicle the right way
-              </h3>
+              <h3 className="itemTitle" style={{ marginTop: 0 }}>Buy your next vehicle the right way</h3>
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 Break free from what didn’t work before, learn what matters today, and move forward with clarity.
               </p>
@@ -226,9 +232,7 @@ export default function Page() {
 
           <div className="card">
             <div className="cardInner">
-              <h3 className="itemTitle" style={{ marginTop: 0 }}>
-                Get approved the right way
-              </h3>
+              <h3 className="itemTitle" style={{ marginTop: 0 }}>Get approved the right way</h3>
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 We position you for approval by aligning your next move with the Cipher—translated by the Co-Pilot.
               </p>
@@ -238,9 +242,7 @@ export default function Page() {
 
           <div className="card">
             <div className="cardInner">
-              <h3 className="itemTitle" style={{ marginTop: 0 }}>
-                Understand what happened—and what’s happening today
-              </h3>
+              <h3 className="itemTitle" style={{ marginTop: 0 }}>Understand what happened—and what’s happening today</h3>
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 The BALANCE Cipher helps you see why outcomes repeat; the Co-Pilot turns it into one clear next step.
               </p>
@@ -250,9 +252,7 @@ export default function Page() {
 
           <div className="card">
             <div className="cardInner">
-              <h3 className="itemTitle" style={{ marginTop: 0 }}>
-                Let us help you with your path forward—by the BALANCE Cipher
-              </h3>
+              <h3 className="itemTitle" style={{ marginTop: 0 }}>Let us help you with your path forward—by the BALANCE Cipher</h3>
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 If buying today isn’t right, we map the next move to become ready—then execute with clarity.
               </p>
@@ -262,7 +262,42 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section title="FAQ" desc="Quick answers. Clear expectations.">
+      {/* V1-STYLE BENEFITS BLOCK */}
+      <Section
+        id="simple-clear"
+        title="Simple. Clear. Built for action—when you’re guided by an AI-driven system."
+        desc="These doors create a simple, clear, built-for-action path—powered by the BALANCE Cipher and guided by the Co-Pilot."
+      >
+        <div className="benefitsLead" style={{ marginBottom: 12 }}>
+          <div className="muted" style={{ fontSize: 12 }}>
+            NewPath is the starting line. The Cipher is the follow-through map—so your next move stays simple, calm, and doable.
+          </div>
+        </div>
+
+        <div className="benefitsGrid">
+          <div className="item">
+            <h3 className="itemTitle">Clarity first</h3>
+            <p className="itemBody">You’ll know where you are and what your next step is—fast.</p>
+          </div>
+
+          <div className="item">
+            <h3 className="itemTitle">One clean start</h3>
+            <p className="itemBody">You choose a door. We route your next move. No overwhelm.</p>
+          </div>
+
+          <div className="item">
+            <h3 className="itemTitle">North Star vision</h3>
+            <p className="itemBody">Car → Score → Home. Auto is the on-ramp to long-term stability.</p>
+          </div>
+
+          <div className="item">
+            <h3 className="itemTitle">Big picture</h3>
+            <p className="itemBody">The Cipher helps you see the pattern—so your next move actually sticks.</p>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="FAQs" desc="Short answers. Clear expectations.">
         <FAQ />
       </Section>
 
