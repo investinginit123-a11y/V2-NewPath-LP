@@ -22,6 +22,37 @@ export default function Page() {
           max-width: 720px;
         }
 
+        /* HERO: AI guided by pill (single capsule, no double-pill) */
+        .aiGuidedPill {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 10px 14px;
+          border-radius: 999px;
+          border: 1px solid rgba(0,0,0,0.10);
+          background: rgba(255,255,255,0.85);
+          box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+          white-space: nowrap;
+        }
+        .aiGuidedText {
+          font-weight: 800;
+          font-size: 12px;
+          letter-spacing: 0.10em;
+          text-transform: uppercase;
+          opacity: 0.80;
+        }
+        .aiGuidedEmblem {
+          height: 34px;         /* make it big inside the pill */
+          width: auto;
+          display: block;
+          object-fit: contain;
+          background: transparent !important;
+          border-radius: 0 !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          filter: saturate(1.05);
+        }
+
         /* Bottom Door CTA — larger + more “door-like” */
         #get-started .doorWrap {
           display: grid;
@@ -46,10 +77,21 @@ export default function Page() {
           justify-content: space-between;
           gap: 16px;
           font-weight: 800;
+          position: relative;
+          overflow: hidden;
         }
         #get-started details.doorDetails > summary::-webkit-details-marker { display: none; }
 
-        /* Bigger “door” badge (left) */
+        #get-started details.doorDetails > summary::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, rgba(0,0,0,0.00), rgba(0,0,0,0.03), rgba(0,0,0,0.00));
+          transform: translateX(-40%);
+          opacity: 0.9;
+          pointer-events: none;
+        }
+
         #get-started .doorBadge {
           width: 64px;
           height: 64px;
@@ -61,7 +103,6 @@ export default function Page() {
           flex: 0 0 auto;
         }
 
-        /* Sophisticated door icon */
         #get-started .doorIcon {
           width: 26px;
           height: 34px;
@@ -109,7 +150,6 @@ export default function Page() {
           line-height: 1.35;
         }
 
-        /* Accent action pill (right) */
         #get-started .doorAction {
           padding: 12px 16px;
           border-radius: 14px;
@@ -129,21 +169,6 @@ export default function Page() {
         #get-started .doorBody {
           margin-top: 14px;
         }
-
-        /* Optional: a subtle “highlight line” to make it feel premium */
-        #get-started details.doorDetails > summary {
-          position: relative;
-          overflow: hidden;
-        }
-        #get-started details.doorDetails > summary::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(90deg, rgba(0,0,0,0.00), rgba(0,0,0,0.03), rgba(0,0,0,0.00));
-          transform: translateX(-40%);
-          opacity: 0.9;
-          pointer-events: none;
-        }
       `}</style>
 
       <header className="hero">
@@ -161,18 +186,27 @@ export default function Page() {
                 }}
               />
             </div>
-            <div className="badge">Simple. Clear. Actionable.</div>
+
+            {/* Replace the old badge with the AI guided pill */}
+            <div className="aiGuidedPill" aria-label="AI guided by the BALANCE Cipher">
+              <span className="aiGuidedText">AI guided by</span>
+              <img
+                className="aiGuidedEmblem"
+                src="/brand/balance-cipher-emblem.png"
+                alt="BALANCE Cipher emblem"
+              />
+            </div>
           </div>
 
           <div className="gridHero">
             <div className="card">
               <div className="cardInner">
                 <h1 className="h1">
-                  New Path Financial — <span style={{ color: "var(--accent)" }}>Open your new door</span>.
+                  Create a New Path <span style={{ color: "var(--accent)" }}>forward</span>.
                 </h1>
 
                 <p className="sub">
-                  NewPath exists to help get you approved—by using the BALANCE Cipher and the Co-Pilot to turn your
+                  NewPath exists to help get you approved—using the BALANCE Cipher and the Co-Pilot to turn your
                   situation into one clear next step.
                 </p>
 
@@ -183,7 +217,7 @@ export default function Page() {
                 </div>
 
                 <div className="muted" style={{ fontSize: 12, marginTop: 10 }}>
-                  Choose one door below. When you’re ready, you can share the basics at the bottom.
+                  Choose one door below. When you’re ready, you can open your new door at the bottom.
                 </div>
               </div>
             </div>
