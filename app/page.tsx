@@ -1,7 +1,9 @@
-// app/page.tsx
-import Section from "../components/Section";
-import LeadForm from "../components/LeadForm";
-import FAQ from "../components/FAQ";
+import Section from "./components/Section";
+import LeadForm from "./components/LeadForm";
+import FAQ from "./components/FAQ";
+
+const APPLICATION_URL = "/#get-started"; // TODO: replace with your real application link when ready
+const BALANCE_CIPHER_URL = "https://balancecipher.com"; // TODO: replace with your real app link if different
 
 export default function Page() {
   return (
@@ -12,14 +14,8 @@ export default function Page() {
             <div className="brand">
               <img
                 src="/brand/newpath-auto-finance.png"
-                alt="NewPath Auto Finance"
-                style={{
-                  width: "3in",
-                  height: "3in",
-                  display: "block",
-                  objectFit: "contain",
-                  maxWidth: "100%"
-                }}
+                alt="New Path Auto Finance"
+                className="brandLogo"
               />
             </div>
             <div className="badge">Simple. Clear. Actionable.</div>
@@ -29,9 +25,9 @@ export default function Page() {
             <div className="card">
               <div className="cardInner">
                 <h1 className="h1">
-                  Start your next step{" "}
-                  <span style={{ color: "var(--accent)" }}>with clarity</span>.
+                  Start your next step <span className="accent">with clarity</span>.
                 </h1>
+
                 <p className="sub">
                   If you are tired of guessing, you are in the right place. We’ll take your situation,
                   keep it simple, and point you to one clean next step.
@@ -44,13 +40,15 @@ export default function Page() {
                 </div>
 
                 <div className="buttonRow">
-                  <a className="btn btnPrimary" href="#get-started">
-                    Get started
+                  <a className="btn btnPrimary" href={APPLICATION_URL}>
+                    Start my application →
                   </a>
-                  <a className="btn" href="#how-it-works">
-                    How it works
+                  <a className="btn" href={BALANCE_CIPHER_URL} target="_blank" rel="noreferrer">
+                    Open BALANCE Cipher →
                   </a>
                 </div>
+
+                <div className="microNote">Fast path: start here. We’ll route you based on what you share.</div>
               </div>
             </div>
 
@@ -69,7 +67,7 @@ export default function Page() {
         </div>
       </header>
 
-      {/* OPTION A: SHORT “HOW TO BUY A CAR” BLOCK — RIGHT UNDER HERO */}
+      {/* OPTION D: SHORT “HOW TO BUY A CAR” BLOCK — BULLETS + HARD CTA */}
       <Section
         id="how-to-buy-a-car"
         title="How to buy a car (the right way)"
@@ -77,47 +75,34 @@ export default function Page() {
       >
         <div className="card">
           <div className="cardInner">
-            <div style={{ display: "grid", gap: 10 }}>
-              <div className="item" style={{ margin: 0 }}>
-                <h3 className="itemTitle" style={{ margin: 0 }}>
-                  1) Know your numbers
-                </h3>
-                <p className="itemBody" style={{ margin: "6px 0 0" }}>
-                  Budget, down payment, and what you can actually carry monthly.
-                </p>
+            <div className="bulletGrid">
+              <div className="bulletItem">
+                <div className="bulletTitle">1) Know your numbers</div>
+                <div className="bulletBody">Budget, down payment, and what you can truly carry monthly.</div>
               </div>
 
-              <div className="item" style={{ margin: 0 }}>
-                <h3 className="itemTitle" style={{ margin: 0 }}>
-                  2) Get positioned for approval
-                </h3>
-                <p className="itemBody" style={{ margin: "6px 0 0" }}>
-                  We identify the approval blockers and route your next move.
-                </p>
+              <div className="bulletItem">
+                <div className="bulletTitle">2) Get positioned for approval</div>
+                <div className="bulletBody">Identify the blockers early and route your next move correctly.</div>
               </div>
 
-              <div className="item" style={{ margin: 0 }}>
-                <h3 className="itemTitle" style={{ margin: 0 }}>
-                  3) Make one clean move next
-                </h3>
-                <p className="itemBody" style={{ margin: "6px 0 0" }}>
-                  Not a 30-step checklist. One step you can execute today.
-                </p>
+              <div className="bulletItem">
+                <div className="bulletTitle">3) Make one clean move next</div>
+                <div className="bulletBody">Not a 30-step checklist. One step you can execute today.</div>
               </div>
+            </div>
 
-              <div className="buttonRow" style={{ marginTop: 4 }}>
-                <a className="btn btnPrimary" href="#get-started">
-                  Start my application →
-                </a>
-                {/* Placeholder until BALANCE Cipher app URL is wired */}
-                <a className="btn" href="#get-started" aria-label="Open BALANCE Cipher (placeholder)">
-                  Open BALANCE Cipher →
-                </a>
-              </div>
+            <div className="buttonRow" style={{ marginTop: 14 }}>
+              <a className="btn btnPrimary" href={APPLICATION_URL}>
+                Start my application →
+              </a>
+              <a className="btn" href={BALANCE_CIPHER_URL} target="_blank" rel="noreferrer">
+                Open BALANCE Cipher →
+              </a>
+            </div>
 
-              <div className="muted">
-                Fast path: start here. We’ll route you to the next step based on what you share.
-              </div>
+            <div className="microNote">
+              If you want the fastest path: submit the basics. We’ll route the next step based on your situation.
             </div>
           </div>
         </div>
