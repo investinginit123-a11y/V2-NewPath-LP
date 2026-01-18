@@ -14,11 +14,11 @@ export default function Page() {
                 src="/brand/newpath-auto-finance.png"
                 alt="NewPath Auto Finance"
                 style={{
-                  height: 56,              // BIGGER LOGO (desktop)
-                  width: "auto",
+                  width: "3in",
+                  height: "3in",
                   display: "block",
-                  maxWidth: "100%",
-                  objectFit: "contain"
+                  objectFit: "contain",
+                  maxWidth: "100%"
                 }}
               />
             </div>
