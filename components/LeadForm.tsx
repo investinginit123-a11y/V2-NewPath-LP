@@ -1,3 +1,4 @@
+// components/LeadForm.tsx
 "use client";
 
 import React, { useMemo, useState } from "react";
@@ -83,13 +84,19 @@ export default function LeadForm({ sourcePage, sourceCta }: Props) {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} noValidate>
       <div style={{ display: "grid", gap: 10 }}>
         <div>
           <label style={{ display: "block", fontSize: 13, color: "var(--muted)", marginBottom: 6 }}>
             Full name
           </label>
-          <input className="input" name="fullName" placeholder="Your name" autoComplete="name" />
+          <input
+            className="input"
+            name="fullName"
+            placeholder="Your name"
+            autoComplete="name"
+            required
+          />
         </div>
 
         <div className="split" style={{ gridTemplateColumns: "1fr 1fr" }}>
@@ -139,4 +146,3 @@ export default function LeadForm({ sourcePage, sourceCta }: Props) {
     </form>
   );
 }
-
