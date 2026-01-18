@@ -7,11 +7,9 @@ import FAQ from "../components/FAQ";
 export default function Page() {
   return (
     <main>
-      {/* GLOBAL WHITE CANVAS OVERRIDE */}
       <style>{`
         html, body { background: #ffffff !important; }
 
-        /* Make the Section title for the pillars block read like a hero line */
         #pillars .sectionTitle {
           font-size: clamp(34px, 5vw, 52px);
           line-height: 1.05;
@@ -22,47 +20,52 @@ export default function Page() {
           max-width: 720px;
         }
 
-        /* HERO: AI guided by pill (single capsule, no double-pill) */
+        /* HERO: AI guided pill — make it feel like a real artifact */
         .aiGuidedPill {
           display: inline-flex;
           align-items: center;
-          gap: 12px;
-          padding: 10px 14px;
+          gap: 14px;
+          padding: 12px 16px;
           border-radius: 999px;
-          border: 1px solid rgba(0,0,0,0.10);
-          background: rgba(255,255,255,0.85);
-          box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+          border: 1px solid rgba(0,0,0,0.12);
+          background: #ffffff;
+          box-shadow: 0 14px 34px rgba(0,0,0,0.08);
           white-space: nowrap;
         }
         .aiGuidedText {
-          font-weight: 800;
+          font-weight: 900;
           font-size: 12px;
-          letter-spacing: 0.10em;
+          letter-spacing: 0.12em;
           text-transform: uppercase;
-          opacity: 0.80;
+          opacity: 0.82;
         }
+
+        /* Remove “boxed” look: make emblem larger and un-framed */
         .aiGuidedEmblem {
-          height: 34px;         /* make it big inside the pill */
+          height: 46px; /* bigger = real presence */
           width: auto;
           display: block;
           object-fit: contain;
           background: transparent !important;
+          border: none !important;
           border-radius: 0 !important;
           padding: 0 !important;
           margin: 0 !important;
-          filter: saturate(1.05);
         }
 
-        /* Bottom Door CTA — larger + more “door-like” */
-        #get-started .doorWrap {
-          display: grid;
-          gap: 14px;
+        /* Subtle accent edge (premium, not loud) */
+        .aiGuidedAccent {
+          width: 10px;
+          height: 46px;
+          border-radius: 999px;
+          background: var(--accent);
+          opacity: 0.14;
+          flex: 0 0 auto;
         }
 
-        #get-started details.doorDetails {
-          border-radius: 22px;
-        }
-
+        /* Bottom Door CTA — keep as you have it (unchanged from your last good state) */
+        #get-started .doorWrap { display: grid; gap: 14px; }
+        #get-started details.doorDetails { border-radius: 22px; }
         #get-started details.doorDetails > summary {
           list-style: none;
           cursor: pointer;
@@ -81,7 +84,6 @@ export default function Page() {
           overflow: hidden;
         }
         #get-started details.doorDetails > summary::-webkit-details-marker { display: none; }
-
         #get-started details.doorDetails > summary::before {
           content: "";
           position: absolute;
@@ -91,7 +93,6 @@ export default function Page() {
           opacity: 0.9;
           pointer-events: none;
         }
-
         #get-started .doorBadge {
           width: 64px;
           height: 64px;
@@ -102,7 +103,6 @@ export default function Page() {
           border: 1px solid rgba(0,0,0,0.08);
           flex: 0 0 auto;
         }
-
         #get-started .doorIcon {
           width: 26px;
           height: 34px;
@@ -131,25 +131,9 @@ export default function Page() {
           top: 50%;
           transform: translateY(-50%);
         }
-
-        #get-started .doorText {
-          display: grid;
-          gap: 4px;
-          flex: 1 1 auto;
-          min-width: 0;
-        }
-        #get-started .doorTitle {
-          font-size: 18px;
-          line-height: 1.15;
-          letter-spacing: -0.01em;
-        }
-        #get-started .doorSub {
-          font-size: 13px;
-          opacity: 0.72;
-          font-weight: 500;
-          line-height: 1.35;
-        }
-
+        #get-started .doorText { display: grid; gap: 4px; flex: 1 1 auto; min-width: 0; }
+        #get-started .doorTitle { font-size: 18px; line-height: 1.15; letter-spacing: -0.01em; }
+        #get-started .doorSub { font-size: 13px; opacity: 0.72; font-weight: 500; line-height: 1.35; }
         #get-started .doorAction {
           padding: 12px 16px;
           border-radius: 14px;
@@ -160,15 +144,11 @@ export default function Page() {
           flex: 0 0 auto;
           box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
-
         #get-started details.doorDetails[open] > summary {
           box-shadow: 0 22px 54px rgba(0,0,0,0.10);
           border-color: rgba(0,0,0,0.14);
         }
-
-        #get-started .doorBody {
-          margin-top: 14px;
-        }
+        #get-started .doorBody { margin-top: 14px; }
       `}</style>
 
       <header className="hero">
@@ -187,9 +167,10 @@ export default function Page() {
               />
             </div>
 
-            {/* Replace the old badge with the AI guided pill */}
+            {/* Bigger, cleaner pill (single) */}
             <div className="aiGuidedPill" aria-label="AI guided by the BALANCE Cipher">
-              <span className="aiGuidedText">AI guided by</span>
+              <span className="aiGuidedText">AI GUIDED BY</span>
+              <span className="aiGuidedAccent" aria-hidden="true" />
               <img
                 className="aiGuidedEmblem"
                 src="/brand/balance-cipher-emblem.png"
@@ -225,7 +206,6 @@ export default function Page() {
         </div>
       </header>
 
-      {/* 4 CTA PILLARS — ARCHITECTURE ONLY */}
       <Section
         id="pillars"
         title="Choose your door"
@@ -240,9 +220,7 @@ export default function Page() {
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 Break free from what didn’t work before, learn what matters today, and move forward with clarity.
               </p>
-              <a className="btn btnPrimary" href="#get-started">
-                Click here →
-              </a>
+              <a className="btn btnPrimary" href="#get-started">Click here →</a>
             </div>
           </div>
 
@@ -254,9 +232,7 @@ export default function Page() {
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 We position you for approval by aligning your next move with the Cipher—translated by the Co-Pilot.
               </p>
-              <a className="btn btnPrimary" href="#get-started">
-                Click here →
-              </a>
+              <a className="btn btnPrimary" href="#get-started">Click here →</a>
             </div>
           </div>
 
@@ -268,9 +244,7 @@ export default function Page() {
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 The BALANCE Cipher helps you see why outcomes repeat; the Co-Pilot turns it into one clear next step.
               </p>
-              <a className="btn btnPrimary" href="#get-started">
-                Click here →
-              </a>
+              <a className="btn btnPrimary" href="#get-started">Click here →</a>
             </div>
           </div>
 
@@ -282,9 +256,7 @@ export default function Page() {
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 If buying today isn’t right, we map the next move to become ready—then execute with clarity.
               </p>
-              <a className="btn btnPrimary" href="#get-started">
-                Click here →
-              </a>
+              <a className="btn btnPrimary" href="#get-started">Click here →</a>
             </div>
           </div>
         </div>
@@ -294,7 +266,6 @@ export default function Page() {
         <FAQ />
       </Section>
 
-      {/* BOTTOM: BIG “DOOR” CTA, FORM HIDDEN UNTIL THEY OPT IN */}
       <Section
         id="get-started"
         title="Ready to open your new door?"
@@ -306,12 +277,10 @@ export default function Page() {
               <span className="doorBadge" aria-hidden="true">
                 <span className="doorIcon" />
               </span>
-
               <span className="doorText">
                 <span className="doorTitle">Open your new door</span>
                 <span className="doorSub">Share only the basics. We’ll follow up with the next step.</span>
               </span>
-
               <span className="doorAction">Open →</span>
             </summary>
 
