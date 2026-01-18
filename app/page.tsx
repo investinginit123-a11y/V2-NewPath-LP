@@ -7,6 +7,13 @@ import FAQ from "../components/FAQ";
 export default function Page() {
   return (
     <main>
+      {/* GLOBAL WHITE CANVAS OVERRIDE (Option A) */}
+      <style>{`
+        html, body {
+          background: #ffffff !important;
+        }
+      `}</style>
+
       <header className="hero">
         <div className="container">
           <div className="nav">
