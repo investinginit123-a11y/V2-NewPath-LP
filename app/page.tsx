@@ -1,4 +1,3 @@
-// DEPLOY TEST: how-to-buy-a-car section marker
 // app/page.tsx
 import Section from "../components/Section";
 import LeadForm from "../components/LeadForm";
@@ -48,7 +47,7 @@ export default function Page() {
                   <a className="btn btnPrimary" href="#get-started">
                     Get started
                   </a>
-                  <a className="btn" href="#how-to-buy-a-car">
+                  <a className="btn" href="/how-to-buy-a-car">
                     How it works
                   </a>
                 </div>
@@ -67,79 +66,8 @@ export default function Page() {
               </div>
             </div>
           </div>
-
-          {/* TEMP: Make it impossible to miss */}
-          <div style={{ paddingTop: 14 }}>
-            <a className="btn" href="#how-to-buy-a-car">
-              Jump to: How to buy a car ↓
-            </a>
-          </div>
         </div>
       </header>
-
-      {/* NEW: HOW TO BUY A CAR SECTION (THIS IS YOUR “INJECTION ZONE”) */}
-      <Section
-        id="how-to-buy-a-car"
-        title="How to buy a car (the right way)"
-        desc="No guessing. No noise. These are the steps that move you toward approval—one clean move at a time."
-      >
-        {/* TEMP MARKER: remove after verification */}
-        <div
-          className="card"
-          style={{
-            border: "2px solid var(--accent)",
-            marginBottom: 12
-          }}
-        >
-          <div className="cardInner" style={{ padding: 12 }}>
-            <div style={{ fontWeight: 800 }}>
-              ✅ YOU ARE HERE: “HOW TO BUY A CAR” SECTION IS RENDERING
-            </div>
-            <div className="muted">
-              If you can see this box, deployment is correct. We will remove this marker next.
-            </div>
-          </div>
-        </div>
-
-        <div className="split">
-          <div className="item">
-            <h3 className="itemTitle">1) Know your numbers first</h3>
-            <p className="itemBody">
-              Before you shop, get clear on budget, down payment, and the monthly payment you can actually carry.
-            </p>
-          </div>
-
-          <div className="item">
-            <h3 className="itemTitle">2) Get positioned for approval</h3>
-            <p className="itemBody">
-              Lenders look for patterns. Income, stability, and a few key signals determine whether you get “yes” or “no.”
-            </p>
-          </div>
-
-          <div className="item">
-            <h3 className="itemTitle">3) Shop the right car the right way</h3>
-            <p className="itemBody">
-              Vehicle choice affects approval. Price, mileage, and structure matter more than most people realize.
-            </p>
-          </div>
-
-          <div className="item">
-            <h3 className="itemTitle">4) Make the move that protects you</h3>
-            <p className="itemBody">
-              Terms and structure decide your future. You want a deal you can live with—without getting trapped.
-            </p>
-          </div>
-        </div>
-
-        <div className="buttonRow" style={{ marginTop: 14 }}>
-          <a className="btn btnPrimary" href="#get-started">
-            Help me with my next step
-          </a>
-          <a className="btn" href="#faq">
-            Questions first
-          </a>
-        </div>
-      </Section>
 
       <Section id="how-it-works" title="How it works" desc="Three simple steps. No extra noise.">
         <div className="split">
@@ -168,7 +96,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section id="faq" title="FAQ" desc="Quick answers. Clear expectations.">
+      <Section title="FAQ" desc="Quick answers. Clear expectations.">
         <FAQ />
       </Section>
 
@@ -182,4 +110,3 @@ export default function Page() {
     </main>
   );
 }
-
