@@ -29,12 +29,12 @@ export default function Page() {
             <div className="card">
               <div className="cardInner">
                 <h1 className="h1">
-                  New Path — <span style={{ color: "var(--accent)" }}>open a new door</span>.
+                  New Path Financial — <span style={{ color: "var(--accent)" }}>Open your new door</span>.
                 </h1>
 
                 <p className="sub">
-                  Leave the old pattern behind, get clear on what matters today, and take one clean next step forward—
-                  guided by the Co-Pilot and the BALANCE Cipher.
+                  Leave the old pattern behind, get clear on what matters today, and take one clean next step
+                  forward—guided by the Co-Pilot and the BALANCE Cipher.
                 </p>
 
                 <div className="pills">
@@ -43,8 +43,6 @@ export default function Page() {
                   <div className="pill">Real next step</div>
                 </div>
 
-                {/* No extra buttons here on purpose.
-                    Your four pillars below are the CTAs. */}
                 <div className="muted" style={{ fontSize: 12, marginTop: 10 }}>
                   Choose one door below. Each one routes you to the same short form.
                 </div>
@@ -70,12 +68,28 @@ export default function Page() {
         title="Choose your door"
         desc="Four clean paths. One clear next step—powered by the BALANCE Cipher and guided by the Co-Pilot."
       >
+        {/* Make the "Choose your door" title feel like a hero headline */}
+        <div style={{ marginTop: -8 }}>
+          <style>{`
+            /* Scoped boost: make the Section title for this block read like a hero line */
+            #pillars .sectionTitle {
+              font-size: clamp(34px, 5vw, 52px);
+              line-height: 1.05;
+              letter-spacing: -0.02em;
+            }
+            #pillars .sectionDesc {
+              font-size: 16px;
+              max-width: 720px;
+            }
+          `}</style>
+        </div>
+
         <div style={{ display: "grid", gap: 12 }}>
           {/* CTA 1 */}
           <div className="card">
             <div className="cardInner">
               <h3 className="itemTitle" style={{ marginTop: 0 }}>
-                Buy the car the right way
+                Buy your next vehicle the right way
               </h3>
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 Break free from what didn’t work before, learn what matters today, and move forward with clarity.
@@ -105,10 +119,10 @@ export default function Page() {
           <div className="card">
             <div className="cardInner">
               <h3 className="itemTitle" style={{ marginTop: 0 }}>
-                Understand what’s happening today
+                Understand what happened—and what’s happening today
               </h3>
               <p className="itemBody" style={{ marginBottom: 12 }}>
-                The BALANCE Cipher shows what’s really going on; the Co-Pilot turns it into one clear next step.
+                The BALANCE Cipher helps you see why outcomes repeat; the Co-Pilot turns it into one clear next step.
               </p>
               <a className="btn btnPrimary" href="#get-started">
                 Show me clarity →
@@ -120,7 +134,7 @@ export default function Page() {
           <div className="card">
             <div className="cardInner">
               <h3 className="itemTitle" style={{ marginTop: 0 }}>
-                Build a path forward
+                Let us help you with your path forward—by the BALANCE Cipher
               </h3>
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 If buying today isn’t right, we map the next move to become ready—then execute with clarity.
