@@ -149,6 +149,10 @@ export default function Page() {
           white-space: nowrap;
           flex: 0 0 auto;
           box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
         }
         #get-started details.doorDetails[open] > summary {
           box-shadow: 0 22px 54px rgba(0,0,0,0.10);
@@ -197,7 +201,7 @@ export default function Page() {
               />
             </div>
 
-            {/* header right intentionally left clean */}
+            {/* header right intentionally left clean */ }
             <div className="badge">Simple. Clear. Actionable.</div>
           </div>
 
@@ -243,7 +247,9 @@ export default function Page() {
               <p className="itemBody" style={{ marginBottom: 12 }}>
                 Break free from what didn’t work before, learn what matters today, and move forward with clarity.
               </p>
-              <a className="btn btnPrimary" href="#get-started">Click here →</a>
+
+              {/* ACTIVE CTA: routes to /buy-your-vehicle */}
+              <a className="btn btnPrimary" href="/buy-your-vehicle">Click here →</a>
             </div>
           </div>
 
