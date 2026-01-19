@@ -1,13 +1,12 @@
-// app/buy-your-vehicle/page.tsx
+// app/buy-your-vehicle-v2/page.tsx
 
 import Section from "../../components/Section";
 
-export default function BuyYourVehiclePage() {
-  const BUILD_STAMP = "A1-VERIFY-ROUTE-UPDATE";
+export default function BuyYourVehicleV2Page() {
+  const BUILD_STAMP = "BUY-VEHICLE-V2-ROUTE-LIVE";
 
   return (
     <main>
-      {/* BUILD STAMP (visual proof that the deployed route updated) */}
       <div
         style={{
           position: "sticky",
@@ -23,7 +22,7 @@ export default function BuyYourVehiclePage() {
           borderBottom: "3px solid var(--accent)",
         }}
       >
-        BUY-YOUR-VEHICLE — BUILD STAMP: {BUILD_STAMP}
+        {BUILD_STAMP}
       </div>
 
       <header className="hero">
@@ -41,7 +40,7 @@ export default function BuyYourVehiclePage() {
                 }}
               />
             </div>
-            <div className="badge">How to buy the right way • {BUILD_STAMP}</div>
+            <div className="badge">How to buy the right way • V2</div>
           </div>
 
           <div className="gridHero" style={{ gridTemplateColumns: "1fr" }}>
@@ -74,8 +73,7 @@ export default function BuyYourVehiclePage() {
                 </div>
 
                 <div className="muted" style={{ fontSize: 12, marginTop: 10 }}>
-                  General education only. The point is clarity before you shop, negotiate, or sign. (Build stamp:{" "}
-                  {BUILD_STAMP})
+                  General education only. The point is clarity before you shop, negotiate, or sign.
                 </div>
               </div>
             </div>
@@ -83,7 +81,6 @@ export default function BuyYourVehiclePage() {
         </div>
       </header>
 
-      {/* QUICK STEP INDEX */}
       <Section id="steps" title="The 4 moves" desc="Same flow as the best guides—just cleaner.">
         <div className="card">
           <div className="cardInner">
@@ -101,12 +98,7 @@ export default function BuyYourVehiclePage() {
         </div>
       </Section>
 
-      {/* STEP 1 */}
-      <Section
-        id="step-1"
-        title="1) Check your credit"
-        desc="Know where you stand before you shop."
-      >
+      <Section id="step-1" title="1) Check your credit" desc="Know where you stand before you shop.">
         <div className="card">
           <div className="cardInner">
             <div className="split">
@@ -141,12 +133,7 @@ export default function BuyYourVehiclePage() {
         </div>
       </Section>
 
-      {/* STEP 2 */}
-      <Section
-        id="step-2"
-        title="2) Know what you can afford"
-        desc="Think bigger than just the monthly payment."
-      >
+      <Section id="step-2" title="2) Know what you can afford" desc="Think bigger than just the monthly payment.">
         <div className="card">
           <div className="cardInner">
             <div className="split">
@@ -181,12 +168,7 @@ export default function BuyYourVehiclePage() {
         </div>
       </Section>
 
-      {/* STEP 3 */}
-      <Section
-        id="step-3"
-        title="3) Get positioned before you shop"
-        desc="Don’t negotiate blind."
-      >
+      <Section id="step-3" title="3) Get positioned before you shop" desc="Don’t negotiate blind.">
         <div className="card">
           <div className="cardInner">
             <div className="split">
@@ -221,12 +203,7 @@ export default function BuyYourVehiclePage() {
         </div>
       </Section>
 
-      {/* STEP 4 */}
-      <Section
-        id="step-4"
-        title="4) Apply the right way"
-        desc="Clarity first. Then you sign."
-      >
+      <Section id="step-4" title="4) Apply the right way" desc="Clarity first. Then you sign.">
         <div className="card">
           <div className="cardInner">
             <div className="split">
@@ -268,12 +245,7 @@ export default function BuyYourVehiclePage() {
         </div>
       </Section>
 
-      {/* BALANCE CIPHER CLOSE */}
-      <Section
-        id="cipher"
-        title="This is where BALANCE Cipher helps"
-        desc="Because doing all of this alone can be a lot."
-      >
+      <Section id="cipher" title="This is where BALANCE Cipher helps" desc="Because doing all of this alone can be a lot.">
         <div className="card">
           <div className="cardInner">
             <div className="split">
