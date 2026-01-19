@@ -54,45 +54,6 @@ export default function BuyYourVehicleV2Page() {
             margin: 0;
           }
         }
-
-        /* Small Cipher pill next to "Where the Cipher fits" */
-        .cipherPill {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          padding: 8px 12px;
-          border-radius: 999px;
-          border: 1px solid rgba(0,0,0,0.12);
-          background: #ffffff;
-          box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-          white-space: nowrap;
-        }
-        .cipherPillText {
-          font-weight: 900;
-          font-size: 11px;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          opacity: 0.82;
-        }
-        .cipherPillAccent {
-          width: 8px;
-          height: 28px;
-          border-radius: 999px;
-          background: var(--accent);
-          opacity: 0.14;
-          flex: 0 0 auto;
-        }
-        .cipherPillEmblem {
-          height: 28px;
-          width: auto;
-          display: block;
-          object-fit: contain;
-          background: transparent !important;
-          border: none !important;
-          border-radius: 0 !important;
-          padding: 0 !important;
-          margin: 0 !important;
-        }
       `}</style>
 
       <div
@@ -156,20 +117,65 @@ export default function BuyYourVehicleV2Page() {
                     Start the 4 steps →
                   </a>
 
-                  <a className="btn" href="#cipher">
-                    Where the Cipher fits →
-                  </a>
+                  {/* Button + inline cipher pill (stays aligned with the CTA) */}
+                  <a
+                    className="btn"
+                    href="#cipher"
+                    style={{ display: "inline-flex", alignItems: "center", gap: 10 }}
+                  >
+                    <span>Where the Cipher fits →</span>
 
-                  {/* Small Cipher pill beside the sub-CTA */}
-                  <span className="cipherPill" aria-label="AI guided by the BALANCE Cipher">
-                    <span className="cipherPillText">AI guided by</span>
-                    <span className="cipherPillAccent" aria-hidden="true" />
-                    <img
-                      className="cipherPillEmblem"
-                      src="/brand/balance-cipher-emblem.png"
-                      alt="BALANCE Cipher emblem"
-                    />
-                  </span>
+                    <span
+                      aria-label="AI guided by the BALANCE Cipher"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 8,
+                        padding: "6px 10px",
+                        borderRadius: 999,
+                        border: "1px solid rgba(0,0,0,0.12)",
+                        background: "#ffffff",
+                        boxShadow: "0 10px 24px rgba(0,0,0,0.06)",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: 900,
+                          fontSize: 11,
+                          letterSpacing: "0.12em",
+                          textTransform: "uppercase",
+                          opacity: 0.82,
+                        }}
+                      >
+                        AI guided by
+                      </span>
+
+                      <span
+                        aria-hidden="true"
+                        style={{
+                          width: 8,
+                          height: 28,
+                          borderRadius: 999,
+                          background: "var(--accent)",
+                          opacity: 0.14,
+                          flex: "0 0 auto",
+                        }}
+                      />
+
+                      <img
+                        src="/brand/balance-cipher-emblem.png"
+                        alt="BALANCE Cipher emblem"
+                        style={{
+                          height: 28,
+                          width: "auto",
+                          display: "block",
+                          objectFit: "contain",
+                          background: "transparent",
+                        }}
+                      />
+                    </span>
+                  </a>
                 </div>
 
                 <div className="muted" style={{ fontSize: 12, marginTop: 10 }}>
