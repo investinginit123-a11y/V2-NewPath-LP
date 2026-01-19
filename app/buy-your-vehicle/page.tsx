@@ -3,8 +3,29 @@
 import Section from "../../components/Section";
 
 export default function BuyYourVehiclePage() {
+  const BUILD_STAMP = "A1-VERIFY-ROUTE-UPDATE";
+
   return (
     <main>
+      {/* BUILD STAMP (visual proof that the deployed route updated) */}
+      <div
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 999,
+          background: "#0b0b0f",
+          color: "#ffffff",
+          padding: "10px 14px",
+          fontWeight: 900,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          textAlign: "center",
+          borderBottom: "3px solid var(--accent)",
+        }}
+      >
+        BUY-YOUR-VEHICLE — BUILD STAMP: {BUILD_STAMP}
+      </div>
+
       <header className="hero">
         <div className="container">
           <div className="nav">
@@ -20,7 +41,7 @@ export default function BuyYourVehiclePage() {
                 }}
               />
             </div>
-            <div className="badge">How to buy the right way.</div>
+            <div className="badge">How to buy the right way • {BUILD_STAMP}</div>
           </div>
 
           <div className="gridHero" style={{ gridTemplateColumns: "1fr" }}>
@@ -53,7 +74,8 @@ export default function BuyYourVehiclePage() {
                 </div>
 
                 <div className="muted" style={{ fontSize: 12, marginTop: 10 }}>
-                  General education only. The point is clarity before you shop, negotiate, or sign.
+                  General education only. The point is clarity before you shop, negotiate, or sign. (Build stamp:{" "}
+                  {BUILD_STAMP})
                 </div>
               </div>
             </div>
