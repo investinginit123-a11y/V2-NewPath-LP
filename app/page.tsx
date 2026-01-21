@@ -19,6 +19,44 @@ export default function Page() {
           max-width: 720px;
         }
 
+        /* ============================================================
+           GLOBAL READABILITY POLISH (applies across the main page)
+           - Consistent hierarchy
+           - Slightly more spacing
+           - Strong/bold emphasis styling (when used in copy)
+        ============================================================ */
+        #pillars .cardInner,
+        #simple-clear .cardInner {
+          padding: 22px 22px;
+        }
+
+        #pillars .itemTitle {
+          font-size: 20px;
+          line-height: 1.15;
+          letter-spacing: -0.01em;
+          font-weight: 900;
+        }
+        #pillars .itemBody {
+          font-size: 15px;
+          line-height: 1.55;
+          opacity: 0.86;
+          margin-top: 8px !important;
+          margin-bottom: 14px !important;
+          max-width: 900px;
+        }
+
+        /* Emphasis that matches the “Understand” polish you liked */
+        #pillars .itemBody strong,
+        #simple-clear .itemBody strong {
+          font-weight: 950;
+          color: rgba(0,0,0,0.88);
+        }
+
+        /* Give CTAs a consistent “settled” placement */
+        #pillars .btn.btnPrimary {
+          margin-top: 2px;
+        }
+
         /* Cipher pill */
         .cipherPill {
           display: inline-flex;
@@ -78,7 +116,6 @@ export default function Page() {
         /* ============================================================
            POLISH PASS — ONLY for: “Understand what happened...” card
            (Hierarchy / spacing / alignment / radius)
-           No routing / logic changes elsewhere.
         ============================================================ */
         .understandCard .cardInner { padding: 22px 22px; }
         .understandCard .itemTitle {
@@ -89,7 +126,7 @@ export default function Page() {
         }
         .understandCard .itemBody {
           font-size: 15px;
-          line-height: 1.45;
+          line-height: 1.55;
           opacity: 0.84;
           margin-bottom: 0 !important;
         }
@@ -124,6 +161,17 @@ export default function Page() {
         }
         @media (max-width: 920px) {
           .benefitsGrid { grid-template-columns: 1fr; }
+        }
+
+        /* Make benefits copy more readable (matches pillars) */
+        #simple-clear .itemTitle {
+          font-weight: 900;
+          letter-spacing: -0.01em;
+        }
+        #simple-clear .itemBody {
+          font-size: 15px;
+          line-height: 1.55;
+          opacity: 0.86;
         }
 
         /* Bottom Door CTA */
@@ -299,8 +347,9 @@ export default function Page() {
           <div className="card">
             <div className="cardInner">
               <h3 className="itemTitle" style={{ marginTop: 0 }}>Buy your next vehicle the right way</h3>
-              <p className="itemBody" style={{ marginBottom: 12 }}>
-                Break free from what didn’t work before, learn what matters today, and move forward with clarity.
+              <p className="itemBody">
+                <strong>Break free</strong> from what didn’t work before, <strong>learn what matters today</strong>, and{" "}
+                <strong>move forward with clarity</strong>.
               </p>
               <a className="btn btnPrimary" href="/buy-your-vehicle">Click here →</a>
             </div>
@@ -309,8 +358,9 @@ export default function Page() {
           <div className="card">
             <div className="cardInner">
               <h3 className="itemTitle" style={{ marginTop: 0 }}>Get approved the right way</h3>
-              <p className="itemBody" style={{ marginBottom: 12 }}>
-                We position you for approval by aligning your next move with the Cipher—translated by the Co-Pilot.
+              <p className="itemBody">
+                We position you for approval by <strong>aligning your next move</strong> with the Cipher—translated by the{" "}
+                <strong>Co-Pilot</strong>.
               </p>
               <a
                 className="btn btnPrimary"
@@ -323,18 +373,17 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Understand door: POLISH PASS ONLY (plus optional bridge activation) */}
           <div className="card understandCard">
             <div className="cardInner">
               <h3 className="itemTitle" style={{ marginTop: 0 }}>
                 Understand what happened—and what’s happening today
               </h3>
               <p className="itemBody">
-                The BALANCE Cipher helps you see why outcomes repeat; the Co-Pilot turns it into one clear next step.
+                The BALANCE Cipher helps you <strong>see why outcomes repeat</strong>; the Co-Pilot turns it into{" "}
+                <strong>one clear next step</strong>.
               </p>
 
               <div className="ctaRowInline">
-                {/* CHANGE: route through the new pass-through bridge */}
                 <a className="btn btnPrimary" href="/new-path-forward">Click here →</a>
 
                 <span className="cipherPill" aria-label="AI guided by the BALANCE Cipher">
@@ -355,8 +404,9 @@ export default function Page() {
               <h3 className="itemTitle" style={{ marginTop: 0 }}>
                 Let us help you with your path forward—by the BALANCE Cipher
               </h3>
-              <p className="itemBody" style={{ marginBottom: 12 }}>
-                If buying today isn’t right, we map the next move to become ready—then execute with clarity.
+              <p className="itemBody">
+                If buying today isn’t right, we <strong>map the next move</strong> to become ready—then{" "}
+                <strong>execute with clarity</strong>.
               </p>
               <a className="btn btnPrimary" href="#cipher">Click here →</a>
             </div>
@@ -378,22 +428,22 @@ export default function Page() {
         <div className="benefitsGrid">
           <div className="item">
             <h3 className="itemTitle">Clarity first</h3>
-            <p className="itemBody">You’ll know where you are and what your next step is—fast.</p>
+            <p className="itemBody"><strong>You’ll know where you are</strong> and what your next step is—fast.</p>
           </div>
 
           <div className="item">
             <h3 className="itemTitle">One clean start</h3>
-            <p className="itemBody">You choose a door. We route your next move. No overwhelm.</p>
+            <p className="itemBody"><strong>You choose a door.</strong> We route your next move. No overwhelm.</p>
           </div>
 
           <div className="item">
             <h3 className="itemTitle">North Star vision</h3>
-            <p className="itemBody">Car → Score → Home. Auto is the on-ramp to long-term stability.</p>
+            <p className="itemBody"><strong>Car → Score → Home.</strong> Auto is the on-ramp to long-term stability.</p>
           </div>
 
           <div className="item">
             <h3 className="itemTitle">Big picture</h3>
-            <p className="itemBody">The Cipher helps you see the pattern—so your next move actually sticks.</p>
+            <p className="itemBody"><strong>See the pattern.</strong> Then take one clean next step that actually sticks.</p>
           </div>
         </div>
       </Section>
