@@ -75,6 +75,46 @@ export default function Page() {
           margin-top: 10px;
         }
 
+        /* ============================================================
+           POLISH PASS — ONLY for: “Understand what happened...” card
+           (Hierarchy / spacing / alignment / radius)
+           No routing / logic changes elsewhere.
+        ============================================================ */
+        .understandCard .cardInner { padding: 22px 22px; }
+        .understandCard .itemTitle {
+          font-size: 22px;
+          line-height: 1.15;
+          letter-spacing: -0.015em;
+          font-weight: 900;
+        }
+        .understandCard .itemBody {
+          font-size: 15px;
+          line-height: 1.45;
+          opacity: 0.84;
+          margin-bottom: 0 !important;
+        }
+        .understandCard .ctaRowInline {
+          margin-top: 14px;
+          gap: 12px;
+          align-items: center;
+        }
+        .understandCard a.btn.btnPrimary {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          height: 44px;
+          padding: 0 18px;
+          border-radius: 999px;
+          font-weight: 900;
+        }
+        .understandCard .cipherPill {
+          height: 44px;
+          padding: 0 14px;
+          border-radius: 999px;
+        }
+        .understandCard .cipherPillAccent { height: 30px; }
+        .understandCard .cipherPillEmblem { height: 30px; }
+
         /* Benefits grid (V1-style, clean) */
         .benefitsLead { max-width: 820px; }
         .benefitsGrid {
@@ -283,17 +323,19 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="card">
+          {/* Understand door: POLISH PASS ONLY (plus optional bridge activation) */}
+          <div className="card understandCard">
             <div className="cardInner">
               <h3 className="itemTitle" style={{ marginTop: 0 }}>
                 Understand what happened—and what’s happening today
               </h3>
-              <p className="itemBody" style={{ marginBottom: 10 }}>
+              <p className="itemBody">
                 The BALANCE Cipher helps you see why outcomes repeat; the Co-Pilot turns it into one clear next step.
               </p>
 
               <div className="ctaRowInline">
-                <a className="btn btnPrimary" href="/buy-your-vehicle">Click here →</a>
+                {/* CHANGE: route through the new pass-through bridge */}
+                <a className="btn btnPrimary" href="/new-path-forward">Click here →</a>
 
                 <span className="cipherPill" aria-label="AI guided by the BALANCE Cipher">
                   <span className="cipherPillText">AI guided by</span>
