@@ -10,11 +10,12 @@ export default function Page() {
 
         :root {
           --np-border: rgba(0,0,0,0.10);
+          --np-border-strong: rgba(0,0,0,0.14);
           --np-shadow: 0 18px 44px rgba(0,0,0,0.08);
           --np-shadow-soft: 0 12px 28px rgba(0,0,0,0.06);
           --np-radius: 22px;
           --np-pill: 999px;
-          --np-text: rgba(0,0,0,0.86);
+          --np-text: rgba(0,0,0,0.88);
           --np-muted: rgba(0,0,0,0.64);
         }
 
@@ -49,7 +50,7 @@ export default function Page() {
           white-space: nowrap;
         }
 
-        /* Page shell */
+        /* Shell */
         .shell {
           max-width: 1080px;
           margin: 0 auto;
@@ -58,7 +59,7 @@ export default function Page() {
           gap: 14px;
         }
 
-        /* Header card */
+        /* Header */
         .heroCard {
           border: 1px solid var(--np-border);
           border-radius: var(--np-radius);
@@ -66,11 +67,10 @@ export default function Page() {
           box-shadow: var(--np-shadow);
         }
         .heroInner {
-          padding: 26px 22px;
+          padding: 26px 22px 22px;
           display: grid;
           gap: 12px;
         }
-
         .headline {
           margin: 0;
           font-size: clamp(26px, 4.2vw, 42px);
@@ -84,9 +84,15 @@ export default function Page() {
           font-size: 16px;
           line-height: 1.45;
           color: var(--np-text);
-          max-width: 860px;
-          font-weight: 600;
-          opacity: 0.9;
+          max-width: 900px;
+          font-weight: 650;
+          opacity: 0.92;
+        }
+        .microLine {
+          margin: 2px 0 0;
+          font-size: 12px;
+          color: rgba(0,0,0,0.58);
+          font-weight: 650;
         }
 
         /* Arc grid */
@@ -108,7 +114,7 @@ export default function Page() {
         .arcInner {
           padding: 18px 18px;
           display: grid;
-          gap: 10px;
+          gap: 12px;
         }
 
         .arcLabelRow {
@@ -148,16 +154,44 @@ export default function Page() {
           font-weight: 950;
           color: rgba(0,0,0,0.90);
         }
+
         .arcBody {
           margin: 0;
           font-size: 15px;
-          line-height: 1.5;
+          line-height: 1.55;
           color: var(--np-muted);
-          font-weight: 600;
+          font-weight: 650;
         }
         .arcEmphasis {
-          color: rgba(0,0,0,0.86);
-          font-weight: 900;
+          color: rgba(0,0,0,0.88);
+          font-weight: 950;
+        }
+
+        /* Clean bullets (still minimal) */
+        .miniList {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: grid;
+          gap: 8px;
+        }
+        .miniItem {
+          display: grid;
+          grid-template-columns: 16px 1fr;
+          gap: 10px;
+          align-items: start;
+          font-size: 14px;
+          line-height: 1.5;
+          color: rgba(0,0,0,0.64);
+          font-weight: 650;
+        }
+        .miniMark {
+          width: 10px;
+          height: 10px;
+          border-radius: var(--np-pill);
+          margin-top: 6px;
+          background: var(--accent);
+          opacity: 0.20;
         }
 
         /* Bottom CTA */
@@ -172,20 +206,18 @@ export default function Page() {
           display: grid;
           gap: 12px;
         }
-
         .ctaRow {
           display: flex;
           flex-wrap: wrap;
           align-items: center;
           gap: 12px;
         }
-
         .primaryBtn {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          height: 48px;
-          padding: 0 20px;
+          height: 50px;
+          padding: 0 22px;
           border-radius: var(--np-pill);
           background: var(--accent);
           color: #ffffff;
@@ -196,7 +228,6 @@ export default function Page() {
           border: 1px solid rgba(0,0,0,0.06);
           white-space: nowrap;
         }
-
         .helperLine {
           margin: 0;
           font-size: 12px;
@@ -223,6 +254,9 @@ export default function Page() {
             <p className="subtext">
               We turn yesterday’s confusion into today’s clear step. The BALANCE formula shows you the way.
             </p>
+            <p className="microLine">
+              No shame. No pressure. Just a clean path from “stuck” to “next step.”
+            </p>
           </div>
         </div>
 
@@ -235,11 +269,27 @@ export default function Page() {
                 <span className="arcLabel">Yesterday</span>
                 <span className="arcDot" aria-hidden="true" />
               </div>
-              <h2 className="arcTitle">The outcome keeps repeating.</h2>
+              <h2 className="arcTitle">You did what you were told—yet the result repeats.</h2>
               <p className="arcBody">
-                You’ve tried things that <span className="arcEmphasis">should’ve worked</span>… but the result
-                keeps showing up again. That doesn’t mean you did something wrong—it means the game changed.
+                You’ve tried things that <span className="arcEmphasis">should’ve worked</span>… but the outcome keeps
+                circling back. That’s not a character issue. It’s usually a mismatch between what lenders look at now
+                and what people were taught to do then.
               </p>
+
+              <ul className="miniList" aria-label="Yesterday signals">
+                <li className="miniItem">
+                  <span className="miniMark" aria-hidden="true" />
+                  <span>It feels random—like the rules keep changing.</span>
+                </li>
+                <li className="miniItem">
+                  <span className="miniMark" aria-hidden="true" />
+                  <span>You do more… but get the same outcome.</span>
+                </li>
+                <li className="miniItem">
+                  <span className="miniMark" aria-hidden="true" />
+                  <span>You’re not broken—you just didn’t have the right map.</span>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -250,12 +300,27 @@ export default function Page() {
                 <span className="arcLabel">Today</span>
                 <span className="arcDot" aria-hidden="true" />
               </div>
-              <h2 className="arcTitle">Leverage, not control.</h2>
+              <h2 className="arcTitle">The Co-Pilot turns the map into one move.</h2>
               <p className="arcBody">
-                <span className="arcEmphasis">You’re not losing control. You’re gaining leverage.</span> AI helps
-                you cut through confusion, while the Co-Pilot translates complexity into one simple step—so you stay
-                in the driver’s seat.
+                <span className="arcEmphasis">You’re not losing control. You’re gaining leverage.</span> AI is not here
+                to make decisions for you—it’s here to remove the fog. The BALANCE Cipher shows the pattern, and the
+                Co-Pilot translates it into one simple step you can actually do.
               </p>
+
+              <ul className="miniList" aria-label="Today signals">
+                <li className="miniItem">
+                  <span className="miniMark" aria-hidden="true" />
+                  <span>You stay in the driver’s seat. The system supports your choices.</span>
+                </li>
+                <li className="miniItem">
+                  <span className="miniMark" aria-hidden="true" />
+                  <span>We simplify what matters—without burying you in information.</span>
+                </li>
+                <li className="miniItem">
+                  <span className="miniMark" aria-hidden="true" />
+                  <span>One step at a time is how you change the pattern.</span>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -266,11 +331,26 @@ export default function Page() {
                 <span className="arcLabel">Tomorrow</span>
                 <span className="arcDot" aria-hidden="true" />
               </div>
-              <h2 className="arcTitle">Better options become possible.</h2>
+              <h2 className="arcTitle">Clarity creates options. Options create freedom.</h2>
               <p className="arcBody">
-                When you can see the pattern, you can change the pattern. Small next steps create clarity, clarity
+                When you can see the pattern, you can change the pattern. Small next steps build clarity, clarity
                 improves approvals, and better approvals unlock better options—auto now, home later.
               </p>
+
+              <ul className="miniList" aria-label="Tomorrow signals">
+                <li className="miniItem">
+                  <span className="miniMark" aria-hidden="true" />
+                  <span>Less guesswork. More confident decisions.</span>
+                </li>
+                <li className="miniItem">
+                  <span className="miniMark" aria-hidden="true" />
+                  <span>Better terms become realistic when the structure is right.</span>
+                </li>
+                <li className="miniItem">
+                  <span className="miniMark" aria-hidden="true" />
+                  <span>Auto becomes the on-ramp to long-term stability and home readiness.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -292,4 +372,3 @@ export default function Page() {
     </main>
   );
 }
-
